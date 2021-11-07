@@ -16,11 +16,6 @@ const newTask = function(title, description) {
   };
 };
 
-// const logTaskState = function(task) {
-//   console.log(`${task.title} has${task.complete ? " " : " not "}been completed`);
-// };
-
-// const completeTask = (task) => task.complete = true;
 
 // DRIVER CODE BELOW
 
