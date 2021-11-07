@@ -5,15 +5,22 @@ const newTask = function(title, description) {
   return {
     title:title,
     description:description,
-    complete: false
+    complete: false,
+    logState() {
+      console.log(`${this.title} has${this.complete ? " " : " not "}been completed`);
+    },
+    completed() {
+      this.complete = true;
+    }
+
   };
 };
 
-const logTaskState = function(task) {
-  console.log(`${task.title} has${task.complete ? " " : " not "}been completed`);
-};
+// const logTaskState = function(task) {
+//   console.log(`${task.title} has${task.complete ? " " : " not "}been completed`);
+// };
 
-const completeTask = (task) => task.complete = true;
+// const completeTask = (task) => task.complete = true;
 
 // DRIVER CODE BELOW
 
@@ -21,9 +28,10 @@ const task1 = newTask("Clean Cat Litter", "Take all the 💩 out of the litter b
 const task2 = newTask("Do Laundry", "😨");
 const tasks = [task1, task2];
 
-logTaskState(task1);
-completeTask(task1);
-logTaskState(task1);
+task1.logState();
+task1.completed();
+task1.logState();
+
 
 
 console.log(tasks);
